@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Hoş Geldiniz</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff;color:#1f1f1f}
+.wrap{max-width:520px;margin:auto;padding:28px 18px 36px}.hero{text-align:center;padding:8px 0 24px}.icon{font-size:42px}.hero h1{font-size:28px;margin:8px 0 6px}.hero p{margin:0;color:#777;font-size:14px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}.tab{border:1px solid #ddd;background:#fff;border-radius:999px;padding:10px 15px;font-size:14px;cursor:pointer}.tab.active{background:#222;color:#fff;border-color:#222}
+.menu{display:grid;gap:12px}.item{border:1px solid #e5e5e5;border-radius:18px;padding:16px}.row{display:flex;gap:13px}.emoji{font-size:27px;line-height:1}.body{flex:1}.body h2{font-size:16px;margin:0 0 5px;font-weight:600}.body p{font-size:13px;color:#777;line-height:1.45;margin:0}.price{margin-top:8px;font-weight:600}.footer{text-align:center;padding-top:28px;color:#888;font-size:12px}.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero"><div class="icon">🥂</div><h1>Hoş Geldiniz</h1><p>Bu akşamın küçük menüsü</p></header>
+<nav class="tabs" aria-label="Menü kategorileri"><button class="tab active" data-filter="all">Hepsi</button><button class="tab" data-filter="snack">Atıştırmalık</button><button class="tab" data-filter="drink">İçecek</button><button class="tab" data-filter="dessert">Tatlı</button></nav>
+<main class="menu">
+<article class="item" data-category="snack"><div class="row"><div class="emoji">🧀</div><div class="body"><h2>Peynir & Şarküteri Tabağı</h2><p>Çeşitli peynirler, füme et, zeytin ve grissini</p><div class="price">₺450</div></div></div></article>
+<article class="item" data-category="snack"><div class="row"><div class="emoji">🌮</div><div class="body"><h2>Mini Taco</h2><p>Baharatlı tavuk, salsa, cheddar ve avokado</p><div class="price">₺280</div></div></div></article>
+<article class="item" data-category="snack"><div class="row"><div class="emoji">🍟</div><div class="body"><h2>Loaded Fries</h2><p>Patates, cheddar, jalapeño ve özel sos</p><div class="price">₺220</div></div></div></article>
+<article class="item" data-category="drink"><div class="row"><div class="emoji">🍹</div><div class="body"><h2>Meyveli Kokteyl</h2><p>Çilek, lime, nane ve özel karışım</p><div class="price">₺250</div></div></div></article>
+<article class="item" data-category="drink"><div class="row"><div class="emoji">🥤</div><div class="body"><h2>Limonata</h2><p>Ev yapımı limonata, taze nane</p><div class="price">₺120</div></div></div></article>
+<article class="item" data-category="dessert"><div class="row"><div class="emoji">🍓</div><div class="body"><h2>Çilekli Cheesecake</h2><p>New York usulü cheesecake, çilek sosu</p><div class="price">₺180</div></div></div></article>
+</main><footer class="footer">Afiyet olsun • İyi eğlenceler 🥂</footer></div>
+<script>document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.item').forEach(x=>x.classList.toggle('hidden',f!=='all'&&x.dataset.category!==f));}));</script>
+</body></html>
